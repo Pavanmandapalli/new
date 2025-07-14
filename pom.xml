@@ -92,6 +92,14 @@
 			<version>${spring.version}</version>
 		</dependency>
   </dependencies>
+  
+  <distributionManagement>
+       <repository>
+         <id>internal.repo</id>
+         <name>Internal repo</name>
+         <url>file:///c:\</url>
+       </repository>
+   </distributionManagement>
 
   <build>
     <plugins>
@@ -108,10 +116,23 @@
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
+	  </plugin>
+	  <plugin>
+          <groupId>org.apache.tomcat.maven</groupId>
+          <artifactId>tomcat7-maven-plugin</artifactId>
+          <version>2.2</version>
+         <configuration>
+           <url>http://localhost:8080/manager/text</url>
+           <server>TomcatServer</server>
+           <path>/webapps</path>
+           <username>pavan</username>
+           <password>admin</password>
+         </configuration>
+      </plugin>
+ 
       </plugin>     
     </plugins>
   </build>
-
   <profiles>
     <profile>
       <id>sonar-coverage</id>
