@@ -128,8 +128,6 @@
            <username>pavan</username>
            <password>admin</password>
          </configuration>
-      </plugin>
- 
       </plugin>     
     </plugins>
   </build>
