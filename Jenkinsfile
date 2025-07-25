@@ -47,10 +47,11 @@ pipeline {
         }
 stage('deploy') { 
     steps{
-        echo 'deploying'
+        echo 'deploying'}
         deploy adapters: [tomcat9(alternativeDeploymentContext: '', credentialsId: 'tomcat', path: '', url: 'http://localhost:8080/')], contextPath: null, war: '**/*.war'
     }   
 
 }
  
     }
+}
