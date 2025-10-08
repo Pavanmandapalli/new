@@ -19,7 +19,7 @@ pipeline {
         stage('test'){
             steps {
                 echo 'testing'
-                bat 'mvn test'
+                sh 'mvn test'
             }
         }
         stage('Package') {
@@ -28,7 +28,7 @@ pipeline {
 
                 echo 'Packaging...'
 
-                bat 'mvn package'
+                sh 'mvn package'
 
             }
 
@@ -40,7 +40,7 @@ pipeline {
 
                 echo 'Building...'
 
-                bat 'mvn install'
+                sh 'mvn install'
 
             }
 
