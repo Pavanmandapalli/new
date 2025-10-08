@@ -11,7 +11,7 @@ pipeline {
 
                 echo 'Cleaning...'
 
-                bat 'mvn clean'
+                sh 'mvn clean'
 
             }
 
